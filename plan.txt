@@ -1,0 +1,14 @@
+procedure Sender(user name,ip address,port)
+    s=udp socket()
+    while True do
+        user message=read text from user input()
+        application message=build message(user message,user name)
+        s.sendto(application message,ip address,port)
+
+procedure Receiver(port)
+    s=udp socket()
+    s.bind(",port)
+    while True do
+        application message = s.receive()
+        (user name,user message) = parse message(application message)
+        print(user name,user message)
